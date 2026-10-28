@@ -109,6 +109,9 @@
     .teaching-content p { margin: 16px 0 0; font-size: inherit; }
     .teaching-content ul { margin-top: 0; padding-left: 18px; }
     .teaching-content b { font-size: inherit; }
+    .teaching-entry { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-top: 16px; }
+    .teaching-entry > div { flex: 1; min-width: 0; }
+    .teaching-date { flex-shrink: 0; white-space: nowrap; }
   </style>
 
 
@@ -239,7 +242,7 @@
     </tbody></table>
   </td></tr></table>
 </section>
-<section id="teaching" class="home-section"><table className="padding-table-columns" width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tr><td width="100%" valign="middle"><heading>教学经历</heading><div class="teaching-content"><p><b>STA 3005 统计计算</b><br>2026年1月至5月</p><ul><li>助教，每周 3 小时线下习题课（获助教奖）</li></ul><p><b>STA 5002 高级回归理论</b><br>2026年9月至12月</p><ul><li>助教，负责设计习题集</li></ul></div></td></tr></table></section>
+<section id="teaching" class="home-section"><table className="padding-table-columns" width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tr><td width="100%" valign="middle"><heading>教学经历</heading><div class="teaching-content"><div class="teaching-entry"><div><b>STA 3005 统计计算</b><ul><li>助教，每周 3 小时线下习题课（获助教奖）</li></ul></div><span class="teaching-date">2026年1月至5月</span></div><div class="teaching-entry"><div><b>STA 5002 高级回归理论</b><ul><li>助教，负责设计习题集</li></ul></div><span class="teaching-date">2026年9月至12月</span></div></div></td></tr></table></section>
 <section id="honors" class="home-section"><table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tr><td width="100%" valign="middle"><heading>荣誉与奖项</heading><table><tr><td width="100%"><ul><li>香港中文大学（深圳）段永平奖学金</li><li>中山大学国家奖学金（前1%）</li><li>全国大学生数学竞赛一等奖</li><li>全国大学生数学建模竞赛一等奖</li></ul></td></tr></table></td></tr></table></section></div></td></tr></table><script>
 (function () {
   var pageLanguage = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
