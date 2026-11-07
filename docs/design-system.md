@@ -12,7 +12,7 @@ Open [the live component gallery](../components.html) through the local HTTP ser
 | `assets/components/navigation.js` | Sticky-section tracking, mobile menu and language anchors |
 | `assets/components/copy.js` | Copy buttons and accessible status feedback |
 | `assets/components/gallery.js` | One image dialog per document, keyboard navigation and focus return |
-| `assets/components/playback.js` | Finite animation playback, visibility pauses and reduced motion |
+| `assets/components/playback.js` | Hover-led playback, touch/keyboard alternatives, visibility pauses and reduced motion |
 | `assets/components/diagrams.js` | The four project-specific figure renderers |
 | `assets/diagram-models.mjs` | Pure DTW and N-queens teaching-example calculations |
 | `assets/site.js` | Homepage initialization and the bare-homepage language preference |
@@ -47,7 +47,7 @@ The homepages keep their content in HTML. Native links and disclosures work with
 | Copy button | `data-copy="value"`; optional `data-copy-status="element-id"` points to a `role="status"` element | Copy-feedback example |
 | Project | `.project` combines `.project-copy` with `.diagram`; use a real heading and a unique `aria-labelledby` | Project composition |
 | Disclosure | Native `details.project-details` and `summary`; `open` is the initial expanded state | Open and closed examples |
-| Figure | `figure.diagram[data-diagram]` with `.figure-head`, `.animation-toggle`, `.diagram-live`, `.diagram-fallback` and a unique caption | All four interactive figures |
+| Figure | `figure.diagram[data-diagram]` with `.figure-head`, a non-interactive `.animation-hint`, `.diagram-live`, `.diagram-fallback` and a unique caption | All four interactive figures |
 | Image dialog | Created by `initImageGallery()`; do not duplicate its HTML on individual pages | Figure enlarge/original links |
 
 Use `data-nav-anchor` on a nested project with its own ID to preserve that project when switching languages. Give all heading, caption, status and section IDs unique values within a page. The library page deliberately includes two instances of the sampling figure to exercise instance isolation.
@@ -64,7 +64,7 @@ gallery.open([
   ['images/erm-score.png', 'Prediction score distributions']
 ], 0);
 
-// Disable autoplay and advance via the same Next step controls.
+// Keep hover static; click/tap the figure or press Enter/Space to advance.
 diagrams.setReducedMotion(true);
 // Return to the system preference; a system reduction preference still wins.
 diagrams.setReducedMotion(false);
@@ -72,7 +72,9 @@ diagrams.setReducedMotion(false);
 
 Supported `data-diagram` values: `erm`, `sampling`, `motion`, `queens`. Original-image links inside a figure use the matching `data-gallery` value. All renderers share the playback controller and image dialog. Diagram assets resolve relative to their module, so their URLs also work if the HTML is moved into a subdirectory.
 
-Animations play once when their figure becomes visible. They pause offscreen, when the document is hidden or when the image dialog is open. Every figure offers pause/replay. System reduced-motion settings and the library's step-through control disable autoplay and CSS motion. Returning to normal motion does not automatically resume a paused figure.
+Visibility alone never starts an animation. A mouse/pen entering the figure starts it; leaving pauses at the current frame. Re-entry resumes an unfinished sequence and restarts a completed sequence. Each entry plays at most one pass. Touch users tap a non-control part of the figure to toggle playback. A keyboard user can Tab onto the figure to start, use Enter/Space to pause or resume, and Tab away to pause. The small corner hint is text, not a playback button.
+
+Chart tabs, image links and other nested controls keep their own actions. Every figure also pauses offscreen, when the document is hidden or when the image dialog is open. System reduced-motion settings and the gallery's step-through mode disable hover/focus animation and CSS motion; click/tap the figure or press Enter/Space to advance one step. Returning to normal motion does not automatically resume a paused figure.
 
 These are explanatory illustrations. ERM uses unchanged original images; sampling illustrates an update; motion uses synthetic pose sequences; N-queens runs a small 4-queen example. Their animations are not additional experimental evidence.
 

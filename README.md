@@ -35,7 +35,7 @@ git diff --check
 - **Motion:** a small synthetic joint-angle example uses cosine-distance dynamic time warping to align two differently paced sequences. It does not run AlphaPose or MotionBERT in the browser.
 - **N-queens:** a real 4-queens bit-mask search generates legal placements, dead ends, backtracking, and a solution. It illustrates the algorithm; it is not a replay of the 18-queens benchmark.
 
-Animations play once when visible, pause offscreen and while an image dialog is open, and expose pause/replay controls. With `prefers-reduced-motion: reduce`, automatic playback is disabled and the control advances one step at a time. Original figures remain accessible in the image dialog and as no-JavaScript fallbacks.
+Animations remain still until hovered or keyboard-focused. Moving away pauses at the current frame; re-entering resumes, or replays from the beginning after completion. On touch screens, tap a non-control part of the figure to play or pause. Enter/Space also toggles playback while the figure itself has focus. There are no persistent play buttons. Figures pause offscreen and while an image dialog is open. With `prefers-reduced-motion: reduce`, hover does not animate; clicking/tapping the figure or pressing Enter/Space advances one step. Original figures remain accessible in the image dialog and as no-JavaScript fallbacks.
 
 Language links keep the current section or project. Explicit language URLs are respected; only the bare homepage applies the saved or browser language preference. No IP lookup is used.
 

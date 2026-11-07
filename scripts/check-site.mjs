@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { queensTrace, alignPoses, poseSequenceA, poseSequenceB } from '../assets/diagram-models.mjs';
+import './check-playback.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const frames = queensTrace(4);

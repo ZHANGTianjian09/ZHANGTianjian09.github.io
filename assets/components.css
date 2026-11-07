@@ -499,19 +499,34 @@ img {
   text-transform:uppercase;
   color:var(--muted);
 }
-.animation-toggle {
+.animation-hint {
   font-size:10px;
-  background:transparent;
-  border:1px solid var(--line);
-  border-radius:var(--radius-sm);
-  padding:5px 9px;
-  min-width:64px;
-  min-height:30px;
+  color:var(--muted);
   white-space:nowrap;
+  flex-shrink:0;
 }
-.animation-toggle:hover {
-  border-color:var(--accent);
+.animation-hint::before {
+  content:"";
+  display:inline-block;
+  width:5px;
+  height:5px;
+  margin-right:6px;
+  border:1px solid currentColor;
+  border-radius:50%;
+  vertical-align:middle;
+}
+.diagram[data-playback="playing"] .animation-hint {
   color:var(--accent);
+}
+.diagram[data-playback="playing"] .animation-hint::before {
+  background:currentColor;
+}
+.diagram:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:4px;
+}
+.diagram[data-playback="reduced"] .diagram-canvas {
+  cursor:pointer;
 }
 .diagram-canvas {
   position:relative;
@@ -1242,9 +1257,6 @@ img {
   }
   .figure-zoom {
     min-height:36px;
-  }
-  .animation-toggle {
-    min-height:34px;
   }
   .figure-tabs button {
     min-height:36px;
