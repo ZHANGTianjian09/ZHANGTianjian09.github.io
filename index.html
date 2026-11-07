@@ -12,78 +12,60 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
   <a class="brand" href="#about">Tianjian Zhang<span class="brand-dot">.</span></a>
-  <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="#about" aria-current="location">About</a><a href="#projects">Research</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#teaching">Teaching</a><a href="#honors">Honors</a></nav>
+  <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="#about" aria-current="location">About</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#teaching">Teaching</a><a href="#honors">Honors</a></nav>
   <div class="language-switch" aria-label="Language"><a href="index.html" lang="en" hreflang="en" data-language="en" aria-current="page">EN</a><a href="zh.html" lang="zh-CN" hreflang="zh-CN" data-language="zh">中文</a></div>
   <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
 </div></header>
 <main id="main" class="wrap">
-  <section class="hero" id="about" aria-labelledby="name"><div class="hero-copy"><p class="eyebrow">DATA SCIENCE · STATISTICS</p><h1 id="name">Tianjian Zhang</h1><p class="hero-role">Ph.D. student · The Chinese University of Hong Kong, Shenzhen</p><p class="hero-intro">I am a Ph.D. student in Data Science at The Chinese University of Hong Kong, Shenzhen. I received a bachelor's degree in Economics and Mathematics from Sun Yat-sen University. My academic background includes high-dimensional statistics and machine learning theory.</p><div class="hero-tags"><span class="tag">High-dimensional statistics</span><span class="tag">Machine learning theory</span></div><div class="hero-actions"><a class="button-primary" href="#projects">Explore research <span aria-hidden="true">↓</span></a><a class="text-link" href="mailto:tianjianzhang1@link.cuhk.edu.cn">Email <span aria-hidden="true">↗</span></a><button class="copy-email js-only" type="button" data-copy="tianjianzhang1@link.cuhk.edu.cn" data-copy-status="copy-status">Copy address</button><span class="visually-hidden" id="copy-status" role="status"></span></div></div><figure class="hero-photo"><div class="portrait-wrap"><div class="portrait"><img src="images/portrait-outdoor.jpg" alt="Tianjian Zhang" fetchpriority="high"></div></div><figcaption class="portrait-caption">CUHK–SHENZHEN</figcaption></figure></section>
-  <section class="section" id="projects" aria-labelledby="research-title"><div class="section-heading"><div><p class="eyebrow">01 / EXPLORATIONS</p><h2 id="research-title">Research & projects</h2></div><p class="section-note">Theory, algorithms,<br>and a little closer look.</p></div><article class="project" data-nav-anchor id="project-erm" aria-labelledby="title-erm">
-          <div class="project-copy"><p class="project-category"><span class="project-number">01</span>Statistical learning theory</p>
-            <h3 id="title-erm">An Asymptotic One-Sample Surrogate for Non-Gaussian Empirical Risk Minimization (ERM) with General Convex Regularization</h3><p class="project-summary">A one-sample surrogate that keeps the original penalty and the feature–label law to study prediction beyond Gaussian assumptions.</p>
-            <div class="project-tags"><span class="tag">Non-Gaussian ERM</span><span class="tag">Convex regularization</span></div><div class="project-links"><a class="paper-link" href="https://raw.githubusercontent.com/ZHANGTianjian09/non-gaussian-erm/main/paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span></a></div>
-            <details class="project-details"><summary>Methods & contributions</summary><ul>
+  <section class="hero" id="about" aria-labelledby="name"><div class="hero-copy"><p class="eyebrow">DATA SCIENCE · STATISTICS</p><h1 id="name">Tianjian Zhang</h1><p class="hero-role">Ph.D. student · The Chinese University of Hong Kong, Shenzhen</p><p class="hero-intro">I am a Ph.D. student in Data Science at The Chinese University of Hong Kong, Shenzhen. I received a bachelor's degree in Economics and Mathematics from Sun Yat-sen University. My academic background includes high-dimensional statistics and machine learning theory.</p><div class="hero-actions"><a class="button-primary" href="#projects">Explore research <span aria-hidden="true">↓</span></a><a class="text-link" href="mailto:tianjianzhang1@link.cuhk.edu.cn">Email <span aria-hidden="true">↗</span></a><button class="copy-email js-only" type="button" data-copy="tianjianzhang1@link.cuhk.edu.cn" data-copy-status="copy-status">Copy address</button><span class="visually-hidden" id="copy-status" role="status"></span></div></div><figure class="hero-photo"><div class="portrait-wrap"><div class="portrait"><img src="images/portrait-outdoor.jpg" alt="Tianjian Zhang" fetchpriority="high"></div></div><figcaption class="portrait-caption">CUHK–SHENZHEN</figcaption></figure></section>
+  <section class="section" id="projects" aria-labelledby="research-title">
+    <div class="section-heading"><h2 id="research-title">Projects</h2></div>
+    <article class="project" data-nav-anchor id="project-erm" aria-labelledby="title-erm">
+      <div class="project-copy">
+        <h3 id="title-erm"><a href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener">An Asymptotic One-Sample Surrogate for Non-Gaussian Empirical Risk Minimization (ERM) with General Convex Regularization<span class="paper-mark" aria-hidden="true"> ↗</span></a></h3>
+        <ul class="project-description">
           <li>Studied high-dimensional ERM with correlated, non-Gaussian features and convex regularization (e.g., ℓ<sub>1</sub> regularization with pseudo-Huber loss)</li>
           <li>Constructed a one-sample surrogate with asymptotic mean and prediction-variance transfer; derived asymptotic prediction laws and expressions for classification error</li>
           <li>Combined cavity Hamilton–Jacobi interpolation, leave-one-out analysis, and convex response calculus to handle nonsmooth penalties</li>
           <li>Retained feature–label distributional information in the surrogate, explaining the breakdown of Gaussian universality in prediction and variable selection</li>
-        </ul><p class="research-note">The paper’s prediction-transfer results are conditional on its fresh-score conjecture and stated assumptions. Transfer of support statistics remains open.</p></details>
-          </div>
-          <figure class="diagram" data-diagram="erm" aria-labelledby="caption-erm">
-            <div class="figure-head"><span class="figure-label">FIG. 01 / From features to predictions</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/erm-marginal.png"><img src="images/erm-marginal.png" alt="From features to predictions" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-erm"><p class="figure-caption">Original figures · select a view or enlarge.</p><a class="figure-zoom" href="images/erm-marginal.png" data-gallery="erm">Enlarge <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article><article class="project" data-nav-anchor id="project-sampling" aria-labelledby="title-sampling">
-          <div class="project-copy"><p class="project-category"><span class="project-number">02</span>Sampling & optimization</p>
-            <h3 id="title-sampling">Tempered Proximal Sampling Algorithms</h3><p class="project-summary">Combine an implicit drift step with state-scaled Gaussian noise to explore heavy-tailed distributions.</p>
-            <div class="project-tags"><span class="tag">Langevin dynamics</span><span class="tag">Heavy tails</span></div>
-            <details class="project-details"><summary>Methods & contributions</summary><ul>
+        </ul>
+      </div>
+      <a class="diagram diagram-link" data-diagram="erm" href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener" aria-label="Read paper: non-Gaussian empirical risk minimization"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/erm-marginal.png" alt="" loading="lazy"></a>
+    </article>
+    <article class="project" data-nav-anchor id="project-sampling" aria-labelledby="title-sampling">
+      <div class="project-copy">
+        <h3 id="title-sampling">Tempered Proximal Sampling Algorithms</h3>
+        <ul class="project-description">
           <li>Developed a tempered proximal Langevin sampler combining implicit drift updates with state-dependent Gaussian noise to stabilize superlinear dynamics and improve heavy-tail exploration</li>
           <li>Established geometric ergodicity under tail-growth conditions, covering polynomial-tailed targets for which non-tempered proximal sampling fails to be geometrically ergodic</li>
           <li>Formulated tempered Langevin dynamics as a gradient flow in weighted Wasserstein geometry, providing a variational framework for convergence and discretization-error analysis</li>
-        </ul></details>
-          </div>
-          <figure class="diagram" data-diagram="sampling" aria-labelledby="caption-sampling">
-            <div class="figure-head"><span class="figure-label">FIG. 02 / One sampling update</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/proximal-v2.svg"><img src="images/proximal-v2.svg" alt="One sampling update" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-sampling"><p class="figure-caption">Concept illustration · algorithmic steps.</p><a class="figure-zoom" href="images/proximal-v2.svg" data-gallery="sampling">Original <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article><article class="project" data-nav-anchor id="project-motion" aria-labelledby="title-motion">
-          <div class="project-copy"><p class="project-category"><span class="project-number">03</span>Machine learning · Computer vision</p>
-            <h3 id="title-motion">Human Motion Similarity Evaluation Framework Using Deep Learning</h3><p class="project-summary">Compare movements across videos by reconstructing joint trajectories and aligning their timing.</p>
-            <div class="project-tags"><span class="tag">MotionBERT</span><span class="tag">Dynamic time warping</span></div>
-            <details class="project-details"><summary>Methods & contributions</summary><ul>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="sampling" role="img" aria-label="Tempered proximal sampling illustration"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/proximal-v2.svg" alt="" loading="lazy"></figure>
+    </article>
+    <article class="project" data-nav-anchor id="project-motion" aria-labelledby="title-motion">
+      <div class="project-copy">
+        <h3 id="title-motion">Human Motion Similarity Evaluation Framework Using Deep Learning</h3>
+        <ul class="project-description">
           <li>Designed a framework to evaluate motion similarity from 2D videos under varying conditions (e.g., angles, lighting)</li>
           <li>Used AlphaPose to extract 2D joint-coordinate sequences and fine-tuned MotionBERT to reconstruct 3D joint trajectories; aligned motion sequences using dynamic time warping (DTW) with cosine distance</li>
           <li>Achieved 93% accuracy in recognizing and matching key actions across videos</li>
-        </ul></details>
-          </div>
-          <figure class="diagram" data-diagram="motion" aria-labelledby="caption-motion">
-            <div class="figure-head"><span class="figure-label">FIG. 03 / Same movement, different timing</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/motion.svg"><img src="images/motion.svg" alt="Same movement, different timing" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-motion"><p class="figure-caption">Concept illustration · example pose sequences.</p><a class="figure-zoom" href="images/motion.svg" data-gallery="motion">Original <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article><article class="project" data-nav-anchor id="project-queens" aria-labelledby="title-queens">
-          <div class="project-copy"><p class="project-category"><span class="project-number">04</span>Algorithms · Parallel computing</p>
-            <h3 id="title-queens">N-Queens Solver with Bitwise and Parallel Computing</h3><p class="project-summary">Encode board constraints as bit masks, prune conflicts, and split the search across independent branches.</p>
-            <div class="project-tags"><span class="tag">Bit masks</span><span class="tag">Oracle SQL</span></div>
-            <details class="project-details"><summary>Methods & contributions</summary><ul>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="motion" role="img" aria-label="Motion sequence alignment illustration"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/motion.svg" alt="" loading="lazy"></figure>
+    </article>
+    <article class="project" data-nav-anchor id="project-queens" aria-labelledby="title-queens">
+      <div class="project-copy">
+        <h3 id="title-queens">N-Queens Solver with Bitwise and Parallel Computing</h3>
+        <ul class="project-description">
           <li>Implemented a single Oracle SQL query to solve the N-Queens problem using backtracking and bitwise operations</li>
           <li>Encoded queen placements as bit masks, reducing storage requirements by over 80% and achieving a computational speedup of over 3× relative to numeric and string-based representations</li>
           <li>Partitioned the search space for parallel computation and tuned Oracle memory allocation; solved the 18-Queens problem on a home computer within one week, setting a university record</li>
-        </ul></details>
-          </div>
-          <figure class="diagram" data-diagram="queens" aria-labelledby="caption-queens">
-            <div class="figure-head"><span class="figure-label">FIG. 04 / Search, backtrack, solve</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/nqueens.svg"><img src="images/nqueens.svg" alt="Search, backtrack, solve" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-queens"><p class="figure-caption">4-queens example · bit-mask backtracking.</p><a class="figure-zoom" href="images/nqueens.svg" data-gallery="queens">Original <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article></section>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="queens" role="img" aria-label="A solution to the 4-queens problem"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/nqueens.svg" alt="" loading="lazy"></figure>
+    </article>
+  </section>
   <div class="resume-grid">
     <section class="section" id="education" aria-label="Education"><div class="section-heading"><div><p class="eyebrow">02 / BACKGROUND</p><h2>Education</h2></div></div><article class="resume-entry"><img class="institution-logo" src="images/cuhk-emblem.png" alt="" loading="lazy"><h3><a href="https://www.cuhk.edu.cn/en" target="_blank" rel="noopener">The Chinese University of Hong Kong, Shenzhen</a></h3><p class="resume-role">Ph.D. in Data Science · Group of Statistics</p><p class="resume-date">Sept 2025 — Present</p><p class="resume-award">Highest Departmental Fellowship</p></article><article class="resume-entry"><img class="institution-logo" src="images/sysu.png" alt="" loading="lazy"><h3><a href="https://www.sysu.edu.cn/sysuen/" target="_blank" rel="noopener">Sun Yat-sen University</a></h3><p class="resume-role">B.A. in Economics and Mathematics</p><p class="resume-date">Sept 2021 — June 2025</p><p class="resume-award">National Scholarship (Top 1%)</p></article></section>
     <section class="section" id="experience" aria-label="Experience"><div class="section-heading"><div><p class="eyebrow">03 / IN PRACTICE</p><h2>Experience</h2></div></div><article class="resume-entry"><img class="institution-logo" src="images/ccb-emblem.svg" alt="" loading="lazy"><h3>China Construction Bank</h3><p class="resume-role">Big Data Application Intern</p><p class="resume-date">Aug — Oct 2024</p><ul class="experience-list">
@@ -94,5 +76,5 @@
     <section class="section" id="honors" aria-label="Honors & awards"><div class="section-heading"><div><p class="eyebrow">05 / RECOGNITION</p><h2>Honors & awards</h2></div></div><ul class="honors-list"><li>Highest Departmental Fellowship, The Chinese University of Hong Kong, Shenzhen</li><li>National Scholarship (Top 1%), Sun Yat-sen University</li><li>First Prize in National Undergraduate Mathematics Competition</li><li>First Prize in National Mathematical Modeling Competition</li></ul></section>
   </div>
 </main>
-<footer class="wrap site-footer"><div>Tianjian Zhang<br>Data science, statistics & the questions in between.</div><a class="back-top" href="#about">Back to top ↑</a></footer>
+<footer class="wrap site-footer"><div>Tianjian Zhang</div><a class="back-top" href="#about">Back to top ↑</a></footer>
 </body></html>

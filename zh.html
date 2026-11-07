@@ -12,78 +12,60 @@
 <a class="skip-link" href="#main">跳转到正文</a>
 <header class="site-header"><div class="wrap header-inner">
   <a class="brand" href="#about">Tianjian Zhang<span class="brand-dot">.</span></a>
-  <nav class="main-nav" id="main-nav" aria-label="主导航"><a href="#about" aria-current="location">简介</a><a href="#projects">研究项目</a><a href="#education">教育</a><a href="#experience">经历</a><a href="#teaching">教学</a><a href="#honors">荣誉</a></nav>
+  <nav class="main-nav" id="main-nav" aria-label="主导航"><a href="#about" aria-current="location">简介</a><a href="#projects">项目经历</a><a href="#education">教育</a><a href="#experience">经历</a><a href="#teaching">教学</a><a href="#honors">荣誉</a></nav>
   <div class="language-switch" aria-label="语言"><a href="index.html" lang="en" hreflang="en" data-language="en">EN</a><a href="zh.html" lang="zh-CN" hreflang="zh-CN" data-language="zh" aria-current="page">中文</a></div>
   <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="main-nav">菜单 <span aria-hidden="true">☰</span></button>
 </div></header>
 <main id="main" class="wrap">
-  <section class="hero" id="about" aria-labelledby="name"><div class="hero-copy"><p class="eyebrow">数据科学 · 统计学</p><h1 id="name">张天健</h1><p class="hero-role">博士生 · 香港中文大学（深圳）</p><p class="hero-intro">我是香港中文大学（深圳）数据科学博士生，本科毕业于中山大学，获得数学与经济学双学位。我的学术背景包括高维统计和机器学习理论。</p><div class="hero-tags"><span class="tag">高维统计</span><span class="tag">机器学习理论</span></div><div class="hero-actions"><a class="button-primary" href="#projects">浏览研究项目 <span aria-hidden="true">↓</span></a><a class="text-link" href="mailto:tianjianzhang1@link.cuhk.edu.cn">电子邮件 <span aria-hidden="true">↗</span></a><button class="copy-email js-only" type="button" data-copy="tianjianzhang1@link.cuhk.edu.cn" data-copy-status="copy-status">复制邮箱</button><span class="visually-hidden" id="copy-status" role="status"></span></div></div><figure class="hero-photo"><div class="portrait-wrap"><div class="portrait"><img src="images/portrait-outdoor.jpg" alt="张天健" fetchpriority="high"></div></div><figcaption class="portrait-caption">香港中文大学（深圳）</figcaption></figure></section>
-  <section class="section" id="projects" aria-labelledby="research-title"><div class="section-heading"><div><p class="eyebrow">01 / EXPLORATIONS</p><h2 id="research-title">研究与项目</h2></div><p class="section-note">从理论与算法出发，<br>走近问题的核心。</p></div><article class="project" data-nav-anchor id="project-erm" aria-labelledby="title-erm">
-          <div class="project-copy"><p class="project-category"><span class="project-number">01</span>统计学习理论</p>
-            <h3 id="title-erm">一般凸正则化下非高斯经验风险最小化（ERM）的渐近单样本代理模型</h3><p class="project-summary">保留原始正则化项与特征—标签分布，用单样本代理模型研究高斯假设之外的预测行为。</p>
-            <div class="project-tags"><span class="tag">非高斯 ERM</span><span class="tag">凸正则化</span></div><div class="project-links"><a class="paper-link" href="https://raw.githubusercontent.com/ZHANGTianjian09/non-gaussian-erm/main/paper.pdf" target="_blank" rel="noopener">阅读论文 <span aria-hidden="true">↗</span></a></div>
-            <details class="project-details"><summary>方法与贡献</summary><ul>
+  <section class="hero" id="about" aria-labelledby="name"><div class="hero-copy"><p class="eyebrow">数据科学 · 统计学</p><h1 id="name">张天健</h1><p class="hero-role">博士生 · 香港中文大学（深圳）</p><p class="hero-intro">我是香港中文大学（深圳）数据科学博士生，本科毕业于中山大学，获得数学与经济学双学位。我的学术背景包括高维统计和机器学习理论。</p><div class="hero-actions"><a class="button-primary" href="#projects">浏览研究项目 <span aria-hidden="true">↓</span></a><a class="text-link" href="mailto:tianjianzhang1@link.cuhk.edu.cn">电子邮件 <span aria-hidden="true">↗</span></a><button class="copy-email js-only" type="button" data-copy="tianjianzhang1@link.cuhk.edu.cn" data-copy-status="copy-status">复制邮箱</button><span class="visually-hidden" id="copy-status" role="status"></span></div></div><figure class="hero-photo"><div class="portrait-wrap"><div class="portrait"><img src="images/portrait-outdoor.jpg" alt="张天健" fetchpriority="high"></div></div><figcaption class="portrait-caption">香港中文大学（深圳）</figcaption></figure></section>
+  <section class="section" id="projects" aria-labelledby="research-title">
+    <div class="section-heading"><h2 id="research-title">项目经历</h2></div>
+    <article class="project" data-nav-anchor id="project-erm" aria-labelledby="title-erm">
+      <div class="project-copy">
+        <h3 id="title-erm"><a href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener">一般凸正则化下非高斯经验风险最小化（ERM）的渐近单样本代理模型<span class="paper-mark" aria-hidden="true"> ↗</span></a></h3>
+        <ul class="project-description">
           <li>研究具有相关非高斯特征和凸正则化的高维ERM（例如带伪Huber损失的ℓ<sub>1</sub>正则化）</li>
           <li>构造具有渐近均值和预测方差转移性质的单样本代理模型；推导渐近预测分布及分类误差表达式</li>
           <li>结合腔体Hamilton–Jacobi插值、留一法分析和凸响应微积分，处理非光滑惩罚项</li>
           <li>在代理模型中保留特征与标签的分布信息，解释预测与变量选择中高斯普适性的失效</li>
-        </ul><p class="research-note">论文中的预测转移结论依赖新样本得分猜想及文中所列假设；将代理模型的支持集统计转移到训练估计量，仍是开放问题。</p></details>
-          </div>
-          <figure class="diagram" data-diagram="erm" aria-labelledby="caption-erm">
-            <div class="figure-head"><span class="figure-label">FIG. 01 / 从特征分布到预测分布</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/erm-marginal.png"><img src="images/erm-marginal.png" alt="从特征分布到预测分布" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-erm"><p class="figure-caption">原始图表 · 可切换视图或放大。</p><a class="figure-zoom" href="images/erm-marginal.png" data-gallery="erm">放大 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article><article class="project" data-nav-anchor id="project-sampling" aria-labelledby="title-sampling">
-          <div class="project-copy"><p class="project-category"><span class="project-number">02</span>采样与优化</p>
-            <h3 id="title-sampling">幂次调节近端采样算法</h3><p class="project-summary">将隐式漂移更新与状态相关的高斯噪声结合，探索重尾分布的采样方法。</p>
-            <div class="project-tags"><span class="tag">Langevin 动力学</span><span class="tag">重尾分布</span></div>
-            <details class="project-details"><summary>方法与贡献</summary><ul>
+        </ul>
+      </div>
+      <a class="diagram diagram-link" data-diagram="erm" href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener" aria-label="阅读论文：非高斯经验风险最小化"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/erm-marginal.png" alt="" loading="lazy"></a>
+    </article>
+    <article class="project" data-nav-anchor id="project-sampling" aria-labelledby="title-sampling">
+      <div class="project-copy">
+        <h3 id="title-sampling">幂次调节近端采样算法</h3>
+        <ul class="project-description">
           <li>开发幂次调节近端Langevin采样器，结合隐式漂移更新与状态相关的高斯噪声，稳定超线性动力学并改善对重尾分布的探索</li>
           <li>在尾部增长条件下建立几何遍历性，涵盖非幂次调节近端采样不具备几何遍历性的多项式尾目标分布</li>
           <li>将幂次调节Langevin动力学表述为加权Wasserstein几何中的梯度流，为收敛性和离散化误差分析提供变分框架</li>
-        </ul></details>
-          </div>
-          <figure class="diagram" data-diagram="sampling" aria-labelledby="caption-sampling">
-            <div class="figure-head"><span class="figure-label">FIG. 02 / 一次采样更新</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/proximal-v2.svg"><img src="images/proximal-v2.svg" alt="一次采样更新" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-sampling"><p class="figure-caption">原理示意 · 展示算法的更新步骤。</p><a class="figure-zoom" href="images/proximal-v2.svg" data-gallery="sampling">原图 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article><article class="project" data-nav-anchor id="project-motion" aria-labelledby="title-motion">
-          <div class="project-copy"><p class="project-category"><span class="project-number">03</span>机器学习 · 计算机视觉</p>
-            <h3 id="title-motion">基于深度学习的人体动作相似度评估框架</h3><p class="project-summary">从视频中重建关节运动轨迹，再对齐动作的时间节奏，比较不同视频中的动作。</p>
-            <div class="project-tags"><span class="tag">MotionBERT</span><span class="tag">动态时间规整</span></div>
-            <details class="project-details"><summary>方法与贡献</summary><ul>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="sampling" role="img" aria-label="幂次调节近端采样示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/proximal-v2.svg" alt="" loading="lazy"></figure>
+    </article>
+    <article class="project" data-nav-anchor id="project-motion" aria-labelledby="title-motion">
+      <div class="project-copy">
+        <h3 id="title-motion">基于深度学习的人体动作相似度评估框架</h3>
+        <ul class="project-description">
           <li>设计从二维视频评估动作相似度的框架，适用于不同角度、光照等条件</li>
           <li>使用AlphaPose提取二维关节坐标序列，微调MotionBERT重建三维关节轨迹；结合余弦距离与动态时间规整（DTW）对齐动作序列</li>
           <li>跨视频关键动作识别与匹配准确率达到93%</li>
-        </ul></details>
-          </div>
-          <figure class="diagram" data-diagram="motion" aria-labelledby="caption-motion">
-            <div class="figure-head"><span class="figure-label">FIG. 03 / 同一动作，不同节奏</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/motion.svg"><img src="images/motion.svg" alt="同一动作，不同节奏" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-motion"><p class="figure-caption">原理示意 · 使用示例姿态序列。</p><a class="figure-zoom" href="images/motion.svg" data-gallery="motion">原图 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article><article class="project" data-nav-anchor id="project-queens" aria-labelledby="title-queens">
-          <div class="project-copy"><p class="project-category"><span class="project-number">04</span>算法 · 并行计算</p>
-            <h3 id="title-queens">基于位运算与并行计算的N皇后问题求解</h3><p class="project-summary">把棋盘约束编码为位掩码，排除冲突位置，并将搜索拆分到独立分支中。</p>
-            <div class="project-tags"><span class="tag">位掩码</span><span class="tag">Oracle SQL</span></div>
-            <details class="project-details"><summary>方法与贡献</summary><ul>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="motion" role="img" aria-label="人体动作序列对齐示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/motion.svg" alt="" loading="lazy"></figure>
+    </article>
+    <article class="project" data-nav-anchor id="project-queens" aria-labelledby="title-queens">
+      <div class="project-copy">
+        <h3 id="title-queens">基于位运算与并行计算的N皇后问题求解</h3>
+        <ul class="project-description">
           <li>利用回溯与位运算，通过单条Oracle SQL查询求解N皇后问题</li>
           <li>将皇后位置编码为位掩码，相比数值和字符串表示，存储需求降低超过80%，计算速度提升超过3倍</li>
           <li>划分搜索空间进行并行计算并优化Oracle内存分配；在家用计算机上一周内求解18皇后问题，创下校内纪录</li>
-        </ul></details>
-          </div>
-          <figure class="diagram" data-diagram="queens" aria-labelledby="caption-queens">
-            <div class="figure-head"><span class="figure-label">FIG. 04 / 搜索、回溯、求解</span><span class="animation-hint js-only" aria-hidden="true"></span></div>
-            <div class="diagram-live js-only"></div>
-            <div class="diagram-fallback"><a href="images/nqueens.svg"><img src="images/nqueens.svg" alt="搜索、回溯、求解" loading="lazy"></a></div>
-            <figcaption class="figure-footer" id="caption-queens"><p class="figure-caption">4 皇后示例 · 位掩码与回溯搜索。</p><a class="figure-zoom" href="images/nqueens.svg" data-gallery="queens">原图 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-        </article></section>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="queens" role="img" aria-label="四皇后问题的一个合法解"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/nqueens.svg" alt="" loading="lazy"></figure>
+    </article>
+  </section>
   <div class="resume-grid">
     <section class="section" id="education" aria-label="教育背景"><div class="section-heading"><div><p class="eyebrow">02 / BACKGROUND</p><h2>教育背景</h2></div></div><article class="resume-entry"><img class="institution-logo" src="images/cuhk-emblem.png" alt="" loading="lazy"><h3><a href="https://www.cuhk.edu.cn/en" target="_blank" rel="noopener">香港中文大学（深圳）</a></h3><p class="resume-role">数据科学博士 · 统计学方向</p><p class="resume-date">2025 年 9 月 — 至今</p><p class="resume-award">院系最高等级博士奖学金</p></article><article class="resume-entry"><img class="institution-logo" src="images/sysu.png" alt="" loading="lazy"><h3><a href="https://www.sysu.edu.cn/sysuen/" target="_blank" rel="noopener">中山大学</a></h3><p class="resume-role">经济学与数学学士</p><p class="resume-date">2021 年 9 月 — 2025 年 6 月</p><p class="resume-award">国家奖学金（前 1%）</p></article></section>
     <section class="section" id="experience" aria-label="工作经历"><div class="section-heading"><div><p class="eyebrow">03 / IN PRACTICE</p><h2>工作经历</h2></div></div><article class="resume-entry"><img class="institution-logo" src="images/ccb-emblem.svg" alt="" loading="lazy"><h3>中国建设银行</h3><p class="resume-role">大数据应用实习生</p><p class="resume-date">2024 年 8 月 — 10 月</p><ul class="experience-list">
@@ -94,5 +76,5 @@
     <section class="section" id="honors" aria-label="荣誉与奖项"><div class="section-heading"><div><p class="eyebrow">05 / RECOGNITION</p><h2>荣誉与奖项</h2></div></div><ul class="honors-list"><li>香港中文大学（深圳）院系最高等级博士奖学金</li><li>中山大学国家奖学金（前1%）</li><li>全国大学生数学竞赛一等奖</li><li>全国大学生数学建模竞赛一等奖</li></ul></section>
   </div>
 </main>
-<footer class="wrap site-footer"><div>Tianjian Zhang<br>数据科学、统计学，以及其中值得探索的问题。</div><a class="back-top" href="#about">回到顶部 ↑</a></footer>
+<footer class="wrap site-footer"><div>Tianjian Zhang</div><a class="back-top" href="#about">回到顶部 ↑</a></footer>
 </body></html>

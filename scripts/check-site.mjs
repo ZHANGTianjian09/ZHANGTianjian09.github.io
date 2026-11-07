@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { queensTrace, alignPoses, poseSequenceA, poseSequenceB } from '../assets/diagram-models.mjs';
-import './check-playback.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const frames = queensTrace(4);
@@ -52,7 +51,12 @@ for (const name of ['index.html', 'zh.html', 'components.html']) {
     else if (!/^(?:[a-z]+:|\/\/)/i.test(url)) assert(existsSync(resolve(root, url.split('#')[0])), `${name}: missing file ${url}`);
   }
   assert(html.includes('width=device-width'));
-  if (name !== 'components.html') assert.equal((html.match(/<details\b/g) || []).length, 4);
+  if (name !== 'components.html') {
+    assert.equal((html.match(/class="project-description"/g) || []).length, 4, 'Project descriptions stay visible without interaction.');
+    assert.equal((html.match(/<details\b/g) || []).length, 0);
+    assert(!/animation-hint|figure-tabs|diagram-state|data-gallery|project-summary|research-note/.test(html), 'Project previews must not add controls or rewritten summaries.');
+    assert(/<a class="diagram diagram-link"[^>]+href="https:\/\/github\.com\/ZHANGTianjian09\/non-gaussian-erm\/blob\/main\/paper\.pdf"/.test(html), 'The paper thumbnail must link directly to the paper.');
+  }
 }
 
 const assets = readdirSync(resolve(root, 'assets'), {recursive:true}).filter(file => /\.(?:js|mjs|css)$/.test(file));

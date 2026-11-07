@@ -19,7 +19,7 @@
         <a href="#foundations" aria-current="location">基础规范</a>
         <a href="#controls">基础组件</a>
         <a href="#project-pattern">项目展示</a>
-        <a href="#illustrations">动态图例</a>
+        <a href="#illustrations">项目缩略图</a>
         <a href="#usage">维护方式</a>
       </nav>
       <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="main-nav">菜单 <span aria-hidden="true">☰</span></button>
@@ -59,9 +59,9 @@
         <h3>按钮与链接</h3>
         <div class="control-row" id="button-example">
           <a class="button-primary" href="#project-pattern">查看项目 <span aria-hidden="true">↓</span></a>
-          <button class="button-secondary js-only" type="button" data-toggle-details="sample-details" aria-expanded="false" aria-controls="sample-details">展开项目详情</button>
+          <button class="button-secondary js-only" type="button" data-toggle-details="closed-example" aria-expanded="false" aria-controls="closed-example">展开说明</button>
           <button class="button-primary" type="button" disabled>暂不可用</button>
-          <a class="text-link" href="#illustrations">查看动态图例 ↗</a>
+          <a class="text-link" href="#illustrations">查看项目缩略图 ↗</a>
         </div>
         <details class="library-code"><summary>查看 HTML</summary><pre><code data-code-for="button-example"></code></pre></details>
       </div>
@@ -83,30 +83,32 @@
         </div>
       </div>
       <div class="library-columns">
-        <div class="component-panel"><h3>折叠状态</h3><details class="project-details" id="closed-example"><summary>方法与贡献</summary><p class="project-summary">点击或按 Enter / Space 展开。默认显示摘要，技术细节按需阅读。</p></details><details class="library-code"><summary>查看 HTML</summary><pre><code data-code-for="closed-example"></code></pre></details></div>
+        <div class="component-panel"><h3>折叠状态</h3><details class="project-details" id="closed-example"><summary>方法与贡献</summary><p class="project-summary">点击或按 Enter / Space 展开。用于确实需要折叠的辅助说明；主页项目条目默认完整展示。</p></details><details class="library-code"><summary>查看 HTML</summary><pre><code data-code-for="closed-example"></code></pre></details></div>
         <div class="component-panel"><h3>展开状态</h3><details class="project-details" id="open-example" open><summary>方法与贡献</summary><p class="project-summary">通过原生 details / summary 保留键盘操作，以及关闭 JavaScript 时的可读性。</p></details><details class="library-code"><summary>查看 HTML</summary><pre><code data-code-for="open-example"></code></pre></details></div>
       </div>
     </section>
 
     <section class="section" id="project-pattern" aria-labelledby="pattern-title">
-      <div class="section-heading"><div><p class="eyebrow">03 / Composition</p><h2 id="pattern-title">项目展示组件</h2></div><p class="section-note">摘要、方法、图例组合。<br>窄屏自动变成单列。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">03 / Composition</p><h2 id="pattern-title">项目展示组件</h2></div><p class="section-note">保留原文条目，<br>搭配小幅示意图。</p></div>
       <article class="project" id="project-example" aria-labelledby="example-title">
-        <div class="project-copy"><p class="project-category"><span class="project-number">02</span>采样与优化</p><h3 id="example-title">幂次调节近端采样算法</h3><p class="project-summary">将隐式漂移更新与状态相关的高斯噪声结合，探索重尾分布的采样方法。</p><div class="project-tags"><span class="tag">Langevin 动力学</span><span class="tag">重尾分布</span></div><details class="project-details" id="sample-details"><summary>方法与贡献</summary><ul><li>隐式近端步骤更新漂移项。</li><li>加入强度与状态相关的高斯噪声。</li><li>这个图例展示一次更新的结构。</li></ul></details></div>
-        <figure class="diagram" data-diagram="sampling" aria-labelledby="sample-caption"><div class="figure-head"><span class="figure-label">FIG. 02 / 一次采样更新</span><span class="animation-hint js-only" aria-hidden="true"></span></div><div class="diagram-live js-only"></div><div class="diagram-fallback"><a href="images/proximal-v2.svg"><img src="images/proximal-v2.svg" alt="采样步骤原图" loading="lazy"></a></div><figcaption class="figure-footer" id="sample-caption"><p class="figure-caption">原理示意 · 展示算法的更新步骤。</p><a class="figure-zoom" href="images/proximal-v2.svg" data-gallery="sampling">原图 ↗</a></figcaption></figure>
-      </article>
+      <div class="project-copy">
+        <h3 id="example-title">幂次调节近端采样算法</h3>
+        <ul class="project-description">
+          <li>开发幂次调节近端Langevin采样器，结合隐式漂移更新与状态相关的高斯噪声，稳定超线性动力学并改善对重尾分布的探索</li>
+          <li>在尾部增长条件下建立几何遍历性，涵盖非幂次调节近端采样不具备几何遍历性的多项式尾目标分布</li>
+          <li>将幂次调节Langevin动力学表述为加权Wasserstein几何中的梯度流，为收敛性和离散化误差分析提供变分框架</li>
+        </ul>
+      </div>
+      <figure class="diagram" data-diagram="sampling" role="img" aria-label="幂次调节近端采样示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/proximal-v2.svg" alt="" loading="lazy"></figure>
+    </article>
       <details class="library-code"><summary>查看完整组件 HTML</summary><pre><code data-code-for="project-example"></code></pre></details>
     </section>
 
     <section class="section" id="illustrations" aria-labelledby="illustrations-title">
-      <div class="section-heading"><div><p class="eyebrow">04 / Interactive figures</p><h2 id="illustrations-title">动态图例与弹窗</h2></div><p class="section-note">鼠标移入即播放，<br>移出暂停，触屏轻触。</p></div>
-      <div class="motion-controls"><div><strong>逐步模式</strong><p>开启后悬停保持静止，点击图例或按回车查看下一步。系统的减少动态效果设置始终生效。</p></div><button class="button-secondary js-only" type="button" id="motion-preference" aria-pressed="false">开启逐步模式</button></div>
-      <div class="library-diagrams">
-        <figure class="diagram" id="diagram-example" data-diagram="erm" aria-labelledby="library-erm-caption"><div class="figure-head"><span class="figure-label">FIG. 01 / 从特征分布到预测分布</span><span class="animation-hint js-only" aria-hidden="true"></span></div><div class="diagram-live js-only"></div><div class="diagram-fallback"><a href="images/erm-marginal.png"><img src="images/erm-marginal.png" alt="特征分布原图" loading="lazy"></a></div><figcaption class="figure-footer" id="library-erm-caption"><p class="figure-caption">原始图表 · 切换与放大。</p><a class="figure-zoom" href="images/erm-marginal.png" data-gallery="erm">放大 ↗</a></figcaption></figure>
-        <figure class="diagram" data-diagram="sampling" aria-labelledby="library-sampling-caption"><div class="figure-head"><span class="figure-label">FIG. 02 / 一次采样更新</span><span class="animation-hint js-only" aria-hidden="true"></span></div><div class="diagram-live js-only"></div><div class="diagram-fallback"><a href="images/proximal-v2.svg"><img src="images/proximal-v2.svg" alt="采样步骤原图" loading="lazy"></a></div><figcaption class="figure-footer" id="library-sampling-caption"><p class="figure-caption">原理示意 · 更新步骤。</p><a class="figure-zoom" href="images/proximal-v2.svg" data-gallery="sampling">原图 ↗</a></figcaption></figure>
-        <figure class="diagram" data-diagram="motion" aria-labelledby="library-motion-caption"><div class="figure-head"><span class="figure-label">FIG. 03 / 同一动作，不同节奏</span><span class="animation-hint js-only" aria-hidden="true"></span></div><div class="diagram-live js-only"></div><div class="diagram-fallback"><a href="images/motion.svg"><img src="images/motion.svg" alt="动作对齐原图" loading="lazy"></a></div><figcaption class="figure-footer" id="library-motion-caption"><p class="figure-caption">原理示意 · 示例姿态序列。</p><a class="figure-zoom" href="images/motion.svg" data-gallery="motion">原图 ↗</a></figcaption></figure>
-        <figure class="diagram" data-diagram="queens" aria-labelledby="library-queens-caption"><div class="figure-head"><span class="figure-label">FIG. 04 / 搜索、回溯、求解</span><span class="animation-hint js-only" aria-hidden="true"></span></div><div class="diagram-live js-only"></div><div class="diagram-fallback"><a href="images/nqueens.svg"><img src="images/nqueens.svg" alt="四皇后原图" loading="lazy"></a></div><figcaption class="figure-footer" id="library-queens-caption"><p class="figure-caption">4 皇后示例 · 位掩码与回溯。</p><a class="figure-zoom" href="images/nqueens.svg" data-gallery="queens">原图 ↗</a></figcaption></figure>
-      </div>
-      <p class="library-muted">点「放大」或「原图」打开共用弹窗。弹窗支持 Esc 关闭、左右方向键切图，并在关闭后归还焦点。</p>
+      <div class="section-heading"><div><p class="eyebrow">04 / Project previews</p><h2 id="illustrations-title">项目缩略图</h2></div><p class="section-note">悬停短暂演示，<br>论文图直接打开论文。</p></div>
+      <div class="motion-controls"><div><strong>减少动态效果</strong><p>开启后保持完整静态图。系统的减少动态效果设置始终生效，论文链接仍可直接打开。</p></div><button class="button-secondary js-only" type="button" id="motion-preference" aria-pressed="false">关闭动效</button></div>
+      <div class="library-diagrams"><div class="library-figure"><h3>论文缩略图</h3><a class="diagram diagram-link" id="diagram-example" data-diagram="erm" href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener" aria-label="阅读论文：非高斯经验风险最小化"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/erm-marginal.png" alt="" loading="lazy"></a></div><div class="library-figure"><h3>采样示意</h3><figure class="diagram" data-diagram="sampling" role="img" aria-label="幂次调节近端采样示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/proximal-v2.svg" alt="" loading="lazy"></figure></div><div class="library-figure"><h3>动作对齐</h3><figure class="diagram" data-diagram="motion" role="img" aria-label="人体动作序列对齐示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/motion.svg" alt="" loading="lazy"></figure></div><div class="library-figure"><h3>四皇后</h3><figure class="diagram" data-diagram="queens" role="img" aria-label="四皇后问题的一个合法解"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/nqueens.svg" alt="" loading="lazy"></figure></div></div>
+      <p class="library-muted">图例没有播放、切换、进度或放大控件。触屏显示静态图；只有实际存在的论文链接才使用链接组件。</p>
       <details class="library-code"><summary>查看图例组件 HTML</summary><pre><code data-code-for="diagram-example"></code></pre></details>
     </section>
 

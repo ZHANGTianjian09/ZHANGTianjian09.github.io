@@ -14,7 +14,7 @@ const { diagrams } = initComponents();
 const motionButton = document.querySelector('#motion-preference');
 function updateMotionButton() {
   motionButton.setAttribute('aria-pressed', String(diagrams.reducedMotion));
-  motionButton.textContent = diagrams.reducedMotion ? '逐步模式已开启' : '开启逐步模式';
+  motionButton.textContent = diagrams.reducedMotion ? '动效已关闭' : '关闭动效';
 }
 motionButton.addEventListener('click', () => {
   diagrams.setReducedMotion(!diagrams.reducedMotion);
@@ -31,6 +31,6 @@ document.querySelectorAll('[data-toggle-details]').forEach(button => {
   });
   details.addEventListener('toggle', () => {
     button.setAttribute('aria-expanded', String(details.open));
-    button.textContent = details.open ? '收起项目详情' : '展开项目详情';
+    button.textContent = details.open ? '收起说明' : '展开说明';
   });
 });

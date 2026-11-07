@@ -12,7 +12,7 @@ Open `http://127.0.0.1:8432/index.html` or `http://127.0.0.1:8432/zh.html`.
 
 ## Component library
 
-Open `http://127.0.0.1:8432/components.html` for the live palette, typography, buttons, language switch, disclosures, project composition, image dialog and all four animated figures. The gallery includes a step-through motion control and HTML examples taken directly from its demo markup.
+Open `http://127.0.0.1:8432/components.html` for the live palette, typography, buttons, language switch, disclosures, project composition and all four compact project previews. The gallery includes a reduced-motion switch and HTML examples taken directly from its demo markup.
 
 - Theme values: `assets/tokens.css`
 - Shared styles: `assets/components.css` (loaded through `assets/site.css`)
@@ -28,15 +28,17 @@ node scripts/check-site.mjs
 git diff --check
 ```
 
-## Figures
+## Project previews and copy
 
-- **ERM:** the original PNGs are preserved. The interaction moves between feature and prediction distributions; it does not regenerate experiment data.
-- **Sampling:** a schematic highlights scaling, implicit drift, state-dependent Gaussian noise, and the next state. It is not a simulated sampler.
-- **Motion:** a small synthetic joint-angle example uses cosine-distance dynamic time warping to align two differently paced sequences. It does not run AlphaPose or MotionBERT in the browser.
-- **N-queens:** a real 4-queens bit-mask search generates legal placements, dead ends, backtracking, and a solution. It illustrates the algorithm; it is not a replay of the 18-queens benchmark.
+Project titles and bullet points on both homepages match the original site at `04dc230`. They are visible by default. Do not add generated summaries, interpretations, research caveats or slogans to the visitor pages; substantive copy changes belong to the site owner.
 
-Animations remain still until hovered or keyboard-focused. Moving away pauses at the current frame; re-entering resumes, or replays from the beginning after completion. On touch screens, tap a non-control part of the figure to play or pause. Enter/Space also toggles playback while the figure itself has focus. There are no persistent play buttons. Figures pause offscreen and while an image dialog is open. With `prefers-reduced-motion: reduce`, hover does not animate; clicking/tapping the figure or pressing Enter/Space advances one step. Original figures remain accessible in the image dialog and as no-JavaScript fallbacks.
+The small right-hand illustrations support the original text. They have no tabs, playback buttons, progress text, captions or image dialogs. Hover gives one brief CSS animation; leaving restores the complete still. Touch screens keep the still. The ERM thumbnail and title are native links to the existing paper’s online PDF view; projects without a supplied paper URL do not invent a destination.
+
+- **ERM:** one unchanged original marginal-distribution PNG, briefly revealed on hover. No chart switching or generated numerical data.
+- **Sampling:** a schematic point moves through a drift step and a noise step. It is not a numerical sampler.
+- **Motion:** two small poses align; the background matches come from the existing synthetic DTW example. It does not run AlphaPose or MotionBERT.
+- **N-queens:** four queens appear in a valid solution computed by the existing bit-mask solver. The thumbnail does not replay the full search or the 18-queens benchmark.
+
+System reduced-motion preferences disable all animation. Linked figures retain native keyboard and touch navigation; unlinked figures are passive illustrations. Original images remain in `images/` and provide the no-JavaScript fallback. The optional image-dialog component remains available to other consumers but is not bound to homepage previews.
 
 Language links keep the current section or project. Explicit language URLs are respected; only the bare homepage applies the saved or browser language preference. No IP lookup is used.
-
-The ERM detail note reflects the conditions in the linked paper: prediction transfer is conditional on its fresh-score conjecture and assumptions; support-statistic transfer remains open.

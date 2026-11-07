@@ -12,8 +12,7 @@ Open [the live component gallery](../components.html) through the local HTTP ser
 | `assets/components/navigation.js` | Sticky-section tracking, mobile menu and language anchors |
 | `assets/components/copy.js` | Copy buttons and accessible status feedback |
 | `assets/components/gallery.js` | One image dialog per document, keyboard navigation and focus return |
-| `assets/components/playback.js` | Hover-led playback, touch/keyboard alternatives, visibility pauses and reduced motion |
-| `assets/components/diagrams.js` | The four project-specific figure renderers |
+| `assets/components/diagrams.js` | Four passive thumbnail renderers and the reduced-motion preference |
 | `assets/diagram-models.mjs` | Pure DTW and N-queens teaching-example calculations |
 | `assets/site.js` | Homepage initialization and the bare-homepage language preference |
 | `assets/library.js`, `assets/library.css` | Documentation-page controls and layout only |
@@ -34,7 +33,7 @@ Chinese pages (`lang="zh-CN"`) use the `--chinese-sans` Heiti stack: Heiti SC, S
 </script>
 ```
 
-Initialize after the document markup exists; module scripts already defer execution. The default root is `document`. For a newly inserted group of components, pass its containing element as the root. Re-initializing the same root does not duplicate listeners or playback controllers. The image dialog is shared across roots in the same document.
+Initialize after the document markup exists; module scripts already defer execution. The default root is `document`. For a newly inserted group of components, pass its containing element as the root. Re-initializing the same root does not duplicate listeners or renderers. The image dialog is shared across roots in the same document.
 
 The homepages keep their content in HTML. Native links and disclosures work without JavaScript, and each figure provides an original-image fallback.
 
@@ -47,10 +46,10 @@ The homepages keep their content in HTML. Native links and disclosures work with
 | Primary / secondary buttons | `.button-primary` / `.button-secondary`; use links for navigation and native buttons for actions; use native `disabled` | Default, disabled, hover and keyboard focus |
 | Text link / tag | `.text-link` / `.tag`; tags describe topics and are not interactive | Basic components |
 | Copy button | `data-copy="value"`; optional `data-copy-status="element-id"` points to a `role="status"` element | Copy-feedback example |
-| Project | `.project` combines `.project-copy` with `.diagram`; use a real heading and a unique `aria-labelledby` | Project composition |
+| Project | `.project` combines `.project-copy`, an always-visible `.project-description` list and a compact `.diagram`; preserve the owner's original text | Project composition |
 | Disclosure | Native `details.project-details` and `summary`; `open` is the initial expanded state | Open and closed examples |
-| Figure | `figure.diagram[data-diagram]` with `.figure-head`, a non-interactive `.animation-hint`, `.diagram-live`, `.diagram-fallback` and a unique caption | All four interactive figures |
-| Image dialog | Created by `initImageGallery()`; do not duplicate its HTML on individual pages | Figure enlarge/original links |
+| Figure | `.diagram[data-diagram]` contains `.diagram-live` (hidden from assistive technology) and an original-image `.diagram-fallback`. Use a native anchor with the real paper URL, or a passive `figure` with `role="img"`; provide an accessible label | All four small previews |
+| Image dialog | Optional API from `initImageGallery()`; do not intercept paper links with a dialog | Available to other consumers; unused by homepage previews |
 
 Use `data-nav-anchor` on a nested project with its own ID to preserve that project when switching languages. Give all heading, caption, status and section IDs unique values within a page. The library page deliberately includes two instances of the sampling figure to exercise instance isolation.
 
@@ -66,19 +65,19 @@ gallery.open([
   ['images/erm-score.png', 'Prediction score distributions']
 ], 0);
 
-// Keep hover static; click/tap the figure or press Enter/Space to advance.
+// Keep the complete static thumbnail; paper links still work normally.
 diagrams.setReducedMotion(true);
 // Return to the system preference; a system reduction preference still wins.
 diagrams.setReducedMotion(false);
 ```
 
-Supported `data-diagram` values: `erm`, `sampling`, `motion`, `queens`. Original-image links inside a figure use the matching `data-gallery` value. All renderers share the playback controller and image dialog. Diagram assets resolve relative to their module, so their URLs also work if the HTML is moved into a subdirectory.
+Supported `data-diagram` values: `erm`, `sampling`, `motion`, `queens`. Assets resolve relative to their module. Each preview is at most 228 × 152px on desktop and 192 × 128px in the narrow homepage layout.
 
-Visibility alone never starts an animation. A mouse/pen entering the figure starts it; leaving pauses at the current frame. Re-entry resumes an unfinished sequence and restarts a completed sequence. Each entry plays at most one pass. Touch users tap a non-control part of the figure to toggle playback. A keyboard user can Tab onto the figure to start, use Enter/Space to pause or resume, and Tab away to pause. The small corner hint is text, not a playback button.
+Previews are complete stills by default. On devices with hover, CSS plays one short animation when the pointer enters a thumbnail; it never loops and resets to the complete still on exit. A linked thumbnail also animates on keyboard focus. No click, tap, Enter or Space handler overrides native navigation. Unlinked illustrations add no tab stops. Touch users see the still and can open a linked paper with one tap. Paper links use the source repository’s PDF viewer because its raw endpoint responds as an octet-stream download. System reduced-motion settings and the gallery's switch disable the animation without changing link behavior.
 
-Chart tabs, image links and other nested controls keep their own actions. Every figure also pauses offscreen, when the document is hidden or when the image dialog is open. System reduced-motion settings and the gallery's step-through mode disable hover/focus animation and CSS motion; click/tap the figure or press Enter/Space to advance one step. Returning to normal motion does not automatically resume a paused figure.
+ERM reveals the unchanged original PNG. Sampling moves a schematic point through drift and noise. Motion pairs two small poses over the existing synthetic DTW alignment. N-queens places the four queens in one legal computed solution. These are small visual cues, not interactive lessons or experimental results.
 
-These are explanatory illustrations. ERM uses unchanged original images; sampling illustrates an update; motion uses synthetic pose sequences; N-queens runs a small 4-queen example. Their animations are not additional experimental evidence.
+The owner's project titles and bullet points are preserved from `04dc230` in both languages and remain visible without expansion. Keep summaries, rewritten contributions, disclaimers and editorial slogans out of the visitor pages unless the owner supplies or approves that copy. Do not add labels, frame counters, playback buttons, chart tabs or an image dialog to the project previews.
 
 ## Adding or changing a component
 

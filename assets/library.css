@@ -34,8 +34,9 @@
 .motion-controls strong { font-weight:500; font-size:14px; }
 .motion-controls p { max-width:660px; color:var(--body); font-size:12px; margin-top:5px; }
 .motion-controls button { flex-shrink:0; }
-.library-diagrams { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
-.library-diagrams .figure-label { text-transform:none; }
+.library-diagrams { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; align-items:start; }
+.library-figure h3 { font:12px var(--sans); color:var(--muted); margin-bottom:18px; }
+
 .source-map { margin:0; }
 .source-map > div { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding:16px 0; border-bottom:1px solid var(--line); font-size:13px; }
 .source-map dt { color:var(--body); }
@@ -44,7 +45,8 @@
   .library-hero { padding:40px 0; }
   .library-hero h1 { font-size:40px; }
   .swatch-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .library-columns, .library-diagrams { grid-template-columns:minmax(0,1fr); gap:0; }
+  .library-columns { grid-template-columns:minmax(0,1fr); gap:0; }
+  .library-diagrams { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .library-diagrams { gap:20px; }
   .library-type { gap:28px; }
   .component-panel { padding:18px; }
