@@ -1,0 +1,46 @@
+/* Shared design tokens. Homepages, diagrams and the component gallery use these values. */
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --white: #ffffff;
+  --surface: #f8fafc;
+  --surface-muted: #f0f5fa;
+  --ink: #20354a;
+  --body: #465d72;
+  --muted: #576e83;
+  --accent: #24638f;
+  --accent-hover: #194b70;
+  --accent-soft: #e5f0f8;
+  --on-accent: #ffffff;
+  --line: #d5e0eb;
+  --line-soft: #e8eef5;
+  --nav-background: #244f70;
+  --nav-ink: #ffffff;
+  --nav-line: #7794ac;
+  --nav-detail: #b9e0f7;
+  --series-a: #246f9c;
+  --series-b: #666799;
+  --diagram-stroke: #7da6c3;
+  --diagram-quiet: #dde7ef;
+  --diagram-number: #627f96;
+  --available: #d7eaf8;
+  --blocked: #ece6f5;
+  --shadow: 0 1px 3px #20354a12;
+  --overlay: #112b46bf;
+  --serif: Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 9px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --motion-fast: 180ms;
+  --motion-base: 250ms;
+  --motion-pose: 380ms;
+  --header: 76px;
+}

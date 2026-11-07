@@ -1,6 +1,6 @@
 # Tianjian Zhang — personal website
 
-Buildless, bilingual GitHub Pages site. `index.html` and `zh.html` contain the full page content. Shared styling and progressive interactions live in `assets/`.
+Buildless, bilingual GitHub Pages site. `index.html` and `zh.html` contain the full page content. Both pages use the shared Academic UI component library in `assets/`.
 
 ## Local preview
 
@@ -10,10 +10,20 @@ python3 -m http.server 8432 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8432/index.html` or `http://127.0.0.1:8432/zh.html`.
 
+## Component library
+
+Open `http://127.0.0.1:8432/components.html` for the live palette, typography, buttons, language switch, disclosures, project composition, image dialog and all four animated figures. The gallery includes a step-through motion control and HTML examples taken directly from its demo markup.
+
+- Theme values: `assets/tokens.css`
+- Shared styles: `assets/components.css` (loaded through `assets/site.css`)
+- Shared interaction modules: `assets/components/`
+- Usage and maintenance: [docs/design-system.md](docs/design-system.md)
+
+The gallery and both homepages share the same source; changing a token or component updates all three. The gallery is separate from the visitor navigation and marked `noindex`.
+
 ## Check
 
 ```sh
-node --check assets/site.js
 node scripts/check-site.mjs
 git diff --check
 ```

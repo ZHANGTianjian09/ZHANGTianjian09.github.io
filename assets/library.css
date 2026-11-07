@@ -1,0 +1,57 @@
+/* Layout for the maintenance gallery only. UI examples use components.css. */
+.library-hero { padding:64px 0 48px; }
+.library-hero h1 { font-size:56px; line-height:1.2; margin:18px 0; letter-spacing:-.03em; }
+.library-hero h1 span { font-family:var(--sans); font-size:17px; font-weight:400; letter-spacing:0; color:var(--muted); margin-left:20px; }
+.library-hero > p:not(.eyebrow) { max-width:680px; color:var(--body); font-size:15px; line-height:1.85; }
+.library-links { display:flex; flex-wrap:wrap; gap:24px; margin-top:24px; }
+.component-library code { font-family:var(--mono); font-size:.85em; overflow-wrap:anywhere; }
+.swatch-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+.swatch { border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; padding:0 14px 14px; }
+.swatch-color { height:68px; display:block; margin:0 -14px 12px; border-bottom:1px solid var(--line); }
+.swatch strong { font-size:13px; display:block; font-weight:500; }
+.swatch code { display:block; font-size:11px; margin-top:3px; color:var(--muted); }
+.token-value { display:block; font:11px var(--mono); margin-top:8px; color:var(--accent); }
+.library-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.library-type { margin-top:36px; padding-top:28px; border-top:1px solid var(--line); }
+.library-type h2 { font-size:31px; line-height:1.4; }
+.library-type p { font-size:14px; }
+.library-label { display:block; font-size:11px; color:var(--muted); margin-bottom:16px; }
+.library-muted { font-size:12px; color:var(--muted); line-height:1.8; margin-top:16px; }
+.library-specs { display:flex; flex-wrap:wrap; gap:12px 28px; font-size:12px; margin-top:28px; color:var(--body); }
+.library-specs code { color:var(--muted); margin-left:8px; }
+.component-panel { border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; margin-bottom:24px; min-width:0; }
+.component-panel h3 { font-family:var(--sans); font-size:14px; font-weight:500; margin-bottom:20px; }
+.component-panel > p { font-size:14px; color:var(--body); }
+.control-row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; }
+.control-row .project-tags { margin:0; }
+.library-status { display:block; font-size:12px; min-height:22px; margin-top:8px; color:var(--accent); }
+.library-code { margin-top:22px; border-top:1px solid var(--line); padding-top:12px; }
+.library-code summary { font-size:11px; color:var(--muted); cursor:pointer; }
+.library-code pre, .library-install { background:var(--surface-muted); border:1px solid var(--line); border-radius:var(--radius-sm); padding:18px; margin-top:12px; overflow:auto; max-height:400px; font:12px/1.7 var(--mono); white-space:pre; }
+.component-library pre code { font-size:12px; overflow-wrap:normal; }
+.component-library .section > .project { padding-top:0; border-bottom:0; }
+.motion-controls { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:20px 24px; margin-bottom:24px; background:var(--accent-soft); border:1px solid var(--line); border-radius:var(--radius-md); }
+.motion-controls strong { font-weight:500; font-size:14px; }
+.motion-controls p { max-width:660px; color:var(--body); font-size:12px; margin-top:5px; }
+.motion-controls button { flex-shrink:0; }
+.library-diagrams { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
+.library-diagrams .figure-label { text-transform:none; }
+.source-map { margin:0; }
+.source-map > div { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding:16px 0; border-bottom:1px solid var(--line); font-size:13px; }
+.source-map dt { color:var(--body); }
+.source-map dd { margin:0; }
+@media(max-width:760px) {
+  .library-hero { padding:40px 0; }
+  .library-hero h1 { font-size:40px; }
+  .swatch-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .library-columns, .library-diagrams { grid-template-columns:minmax(0,1fr); gap:0; }
+  .library-diagrams { gap:20px; }
+  .library-type { gap:28px; }
+  .component-panel { padding:18px; }
+  .motion-controls { flex-direction:column; align-items:start; padding:18px; gap:16px; }
+  .source-map > div { grid-template-columns:minmax(0,1fr); gap:6px; }
+  .library-links { gap:14px; }
+}
+@media(max-width:380px) {
+  .library-hero h1 span { display:block; margin:12px 0 0; }
+}
