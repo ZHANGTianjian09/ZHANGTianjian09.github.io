@@ -22,6 +22,8 @@ Open [the live component gallery](../components.html) through the local HTTP ser
 
 The palette follows the original site's white page and colored navigation, with a deep-blue navigation bar, blue-gray text and restrained blue accents. The second diagram series uses indigo. Match browser `theme-color` and the favicon to the navigation token when changing that token.
 
+Chinese pages (`lang="zh-CN"`) use the `--chinese-sans` Heiti stack: Heiti SC, SimHei, STHeiti, Noto Sans CJK SC, Microsoft YaHei and PingFang SC, with a sans-serif fallback. Both `--heading` and `--sans` resolve to this stack, covering headings, body text, controls and SVG labels. English headings keep the Georgia-based `--serif` stack through `--heading`. Latin branding and decorative numerals use `--serif` directly. Maintain these choices in `tokens.css`; no font download is required.
+
 ## Use the library
 
 ```html

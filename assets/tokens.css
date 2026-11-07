@@ -29,6 +29,8 @@
   --overlay: #112b46bf;
   --serif: Georgia, "Songti SC", "Noto Serif CJK SC", serif;
   --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --chinese-sans: "Heiti SC", "SimHei", "STHeiti", "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --heading: var(--serif);
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -43,4 +45,10 @@
   --motion-base: 250ms;
   --motion-pose: 380ms;
   --header: 76px;
+}
+
+/* Chinese pages share one Heiti stack across headings, body text and SVG labels. */
+:root:lang(zh) {
+  --sans: var(--chinese-sans);
+  --heading: var(--chinese-sans);
 }
