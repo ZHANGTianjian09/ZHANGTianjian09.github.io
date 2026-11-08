@@ -48,7 +48,7 @@ for (const name of ['index.html', 'zh.html', 'components.html']) {
   assert.equal(new Set(ids).size, ids.length, `${name}: IDs must be unique.`);
   for (const [, url] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
     if (url.startsWith('#')) assert(ids.includes(url.slice(1)), `${name}: missing anchor ${url}`);
-    else if (!/^(?:[a-z]+:|\/\/)/i.test(url)) assert(existsSync(resolve(root, url.split('#')[0])), `${name}: missing file ${url}`);
+    else if (!/^(?:[a-z]+:|\/\/)/i.test(url)) assert(existsSync(resolve(root, url.split(/[?#]/)[0])), `${name}: missing file ${url}`);
   }
   assert(html.includes('width=device-width'));
   if (name !== 'components.html') {
@@ -70,7 +70,7 @@ for (const relative of assets) {
       if (url.startsWith('.')) assert(existsSync(resolve(dirname(path), url)), `${relative}: missing module or asset ${url}`);
     }
   } else {
-    for (const [, url] of source.matchAll(/@import url\("([^"]+)"\)/g)) assert(existsSync(resolve(dirname(path), url)), `${relative}: missing stylesheet ${url}`);
+    for (const [, url] of source.matchAll(/@import url\("([^"]+)"\)/g)) assert(existsSync(resolve(dirname(path), url.split(/[?#]/)[0])), `${relative}: missing stylesheet ${url}`);
   }
   if (relative !== 'tokens.css') assert(!/#[\da-f]{3,8}\b/i.test(source), `${relative}: put UI color literals in tokens.css.`);
 }

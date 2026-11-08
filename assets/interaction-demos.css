@@ -1,0 +1,114 @@
+/* Review-only page. Typography, color, diagrams and keyframes come from the shared library. */
+.demo-page { background:var(--surface); }
+.study-wrap { width:min(1120px,calc(100% - 64px)); margin-inline:auto; }
+.study-header { background:var(--nav-background); color:var(--nav-ink); }
+.study-header-inner { min-height:64px; display:flex; align-items:center; gap:28px; }
+.study-header a { text-decoration:none; }
+.study-header a:hover { color:var(--nav-detail); }
+.study-brand { font:21px var(--serif); white-space:nowrap; }
+.study-brand span { color:var(--nav-detail); }
+.study-label { font:10px var(--sans); letter-spacing:.12em; color:var(--nav-detail); }
+.study-back { margin-left:auto; font-size:12px; }
+.study-intro { padding:42px 0 28px; }
+.study-kicker { color:var(--accent); font:10px var(--mono); letter-spacing:.12em; margin-bottom:12px; }
+.study-intro h1 { font-size:30px; line-height:1.35; letter-spacing:.015em; }
+.study-intro > p:last-child { font-size:14px; color:var(--muted); margin-top:12px; }
+.study-options { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.study-options > button { display:flex; align-items:center; gap:15px; text-align:left; border:1px solid var(--line); background:var(--paper); border-radius:var(--radius-md); padding:16px 18px; transition:border-color 160ms,background 160ms; }
+.study-options > button:hover { border-color:var(--accent); }
+.study-options > button[aria-selected="true"] { background:var(--accent-soft); border-color:var(--accent); }
+.option-letter { font:27px var(--serif); color:var(--accent); }
+.option-copy { display:grid; gap:3px; }
+.option-copy strong { font-size:14px; font-weight:500; }
+.option-copy > span { font-size:11px; color:var(--muted); }
+.option-copy small { font-size:10px; color:var(--accent); font-weight:400; margin-left:6px; }
+.study-explanation { padding:20px 2px; min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+#mode-title { font-size:12px; color:var(--accent); margin-bottom:3px; }
+#mode-description { font-size:12px; color:var(--muted); }
+.study-reset { padding:8px 0 8px 12px; border:0; background:transparent; font-size:12px; white-space:nowrap; color:var(--accent); }
+.study-reset span { margin-left:8px; }
+.demo-stage { border:1px solid var(--line); background:var(--paper); border-radius:var(--radius-md); padding:28px 36px 12px; }
+.demo-stage:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+.stage-heading { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:20px; }
+.stage-heading h2 { font-size:21px; }
+.stage-heading > span { color:var(--muted); font-size:10px; letter-spacing:.06em; }
+.demo-card { display:grid; grid-template-columns:minmax(0,1fr) 228px; gap:32px; padding:24px 0; border-bottom:1px solid var(--line-soft); position:relative; }
+.demo-card:last-child { border-bottom:0; }
+.demo-card::before { content:""; position:absolute; top:26px; bottom:26px; left:-18px; width:2px; background:var(--accent); opacity:0; transition:opacity 180ms; }
+.demo-card.is-open::before { opacity:1; }
+.demo-copy { min-width:0; }
+.demo-card h3 { font-family:var(--heading); font-size:18px; line-height:1.55; font-weight:400; text-wrap:pretty; }
+.demo-card h3 a { text-decoration:none; }
+.demo-card h3 a:hover { text-decoration:underline; }
+.demo-bullets { font-size:13px; line-height:1.85; color:var(--body); margin:12px 0 0; padding-left:17px; }
+.demo-bullets li+li { margin-top:8px; }
+.demo-bullets li::marker { color:var(--diagram-number); }
+.demo-card .diagram { width:228px; align-self:start; justify-self:end; margin-top:0; transition:width 240ms ease; }
+.demo-ready [data-mode="b"] .demo-card:not(.is-open) .diagram { width:102px; }
+.demo-stage.is-measuring * { transition:none!important; }
+.demo-more .demo-bullets { margin-top:8px; }
+.demo-more { display:grid; grid-template-rows:1fr; opacity:1; }
+.demo-more > div { overflow:hidden; }
+.disclosure-toggle { display:none; align-items:center; gap:6px; padding:5px 0; min-height:32px; background:transparent; color:var(--muted); border:0; font-size:11px; margin-top:6px; }
+.disclosure-toggle:hover { color:var(--accent); }
+.disclosure-chevron { width:12px; height:12px; transition:transform 240ms; }
+.disclosure-chevron path { fill:none; stroke:currentColor; stroke-width:1.4; }
+.disclosure-toggle[aria-expanded="true"] .disclosure-chevron { transform:rotate(180deg); }
+.demo-ready .disclosure-toggle:not([hidden]) { display:inline-flex; }
+.disclosure-toggle[hidden] { display:none; }
+.demo-ready .demo-more { grid-template-rows:0fr; opacity:0; visibility:hidden; transition:grid-template-rows 280ms ease,opacity 180ms ease,visibility 280ms; }
+.demo-ready .is-open .demo-more { grid-template-rows:1fr; opacity:1; visibility:visible; }
+.study-footer { padding:22px 0 36px; color:var(--muted); font-size:11px; }
+.study-footer > div { display:flex; align-items:center; gap:24px; margin-top:12px; }
+.study-footer button { border:1px solid var(--line); border-radius:var(--radius-sm); background:transparent; padding:4px 9px; font-size:11px; color:var(--muted); }
+.study-footer button[aria-pressed="true"] { color:var(--accent); border-color:var(--accent); }
+.study-noscript { margin-bottom:24px; font-size:13px; }
+
+/* The entire project row drives the existing finite animations in this experiment. */
+.demo-page .demo-card .diagram .diagram-live * { animation:none; }
+.demo-page .demo-card.is-playing .diagram .preview-chart:not(.preview-chart-trace) { animation:chart-underlay 1.6s ease-out both; }
+.demo-page .demo-card.is-playing .diagram .preview-chart-trace { animation:chart-trace 1.6s ease-out both; }
+.demo-page .demo-card.is-playing .diagram .sampling-dot { animation:sampling-update 1.8s ease-in-out both; }
+.demo-page .demo-card.is-playing .diagram .motion-arm-left { animation:pose-left 2s ease-in-out both; }
+.demo-page .demo-card.is-playing .diagram .motion-arm-right { animation:pose-right 2s ease-in-out both; }
+.demo-page .demo-card.is-playing .diagram .motion-b .motion-arm { animation-delay:.2s; }
+.demo-page .demo-card.is-playing .diagram .motion-alignment path { animation:alignment-trace 2.2s ease-out both; }
+.demo-page .demo-card.is-playing .diagram .preview-queen { animation:queen-place .5s ease-out both; }
+.demo-page .demo-card.is-playing .diagram .queen-1 { animation-delay:.3s; }
+.demo-page .demo-card.is-playing .diagram .queen-2 { animation-delay:.6s; }
+.demo-page .demo-card.is-playing .diagram .queen-3 { animation-delay:.9s; }
+
+@media(max-width:720px) {
+  .study-wrap { width:calc(100% - 36px); }
+  .study-header-inner { min-height:58px; gap:14px; }
+  .study-label { display:none; }
+  .study-intro { padding:30px 0 22px; }
+  .study-intro h1 { font-size:25px; }
+  .study-intro > p:last-child { font-size:12px; }
+  .study-options { gap:7px; }
+  .study-options > button { flex-direction:column; align-items:flex-start; gap:8px; padding:12px; }
+  .option-letter { font-size:23px; }
+  .option-copy strong { font-size:12px; }
+  .option-copy > span { font-size:10px; }
+  .option-copy small { display:block; margin-left:0; }
+  .study-explanation { align-items:start; gap:16px; }
+  .study-reset { font-size:11px; }
+  .study-reset span { display:none; }
+  .demo-stage { padding:22px 20px 8px; }
+  .stage-heading > span { display:none; }
+  .demo-card { grid-template-columns:minmax(0,1fr); gap:16px; padding:24px 0; }
+  .demo-card::before { left:-12px; }
+  .demo-card h3 { font-size:17px; }
+  .demo-card .diagram { width:152px; justify-self:end; margin-top:0; }
+  .demo-ready [data-mode="b"] .demo-card:not(.is-open) .diagram { width:78px; }
+  .demo-bullets { font-size:13px; }
+  .disclosure-toggle { min-height:44px; font-size:12px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .demo-page *, .demo-page *::before { transition:none!important; animation:none!important; }
+}
+@media print {
+  .study-options,.study-explanation,.study-footer,.disclosure-toggle { display:none!important; }
+  .demo-ready .demo-more { grid-template-rows:1fr; visibility:visible; opacity:1; }
+}

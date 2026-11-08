@@ -32,7 +32,7 @@ git diff --check
 
 Project titles and bullet points on both homepages match the original site at `04dc230`. They are visible by default. Do not add generated summaries, interpretations, research caveats or slogans to the visitor pages; substantive copy changes belong to the site owner.
 
-The small right-hand illustrations support the original text. They have no tabs, playback buttons, progress text, captions or image dialogs. Hover gives one brief CSS animation; leaving restores the complete still. Touch screens keep the still. The ERM thumbnail and title are native links to the existing paper’s online PDF view; projects without a supplied paper URL do not invent a destination.
+Both homepages use the selected **A / full-copy** pattern: every original bullet stays visible beside a small illustration. Hovering anywhere in a project row—title, bullets, thumbnail or spacing—gives its thumbnail one brief CSS animation; text, thumbnail size and row height stay fixed. Leaving restores the complete still, and entering again replays it. Keyboard focus on a linked thumbnail gives the same visual cue; pointer-click focus does not keep playback active after leaving. Touch screens keep the still. There are no expansion controls, tabs, playback buttons, progress text, captions or image dialogs. The ERM thumbnail and title are native links to the existing paper’s online PDF view; projects without a supplied paper URL do not invent a destination.
 
 - **ERM:** one unchanged original marginal-distribution PNG, briefly revealed on hover. No chart switching or generated numerical data.
 - **Sampling:** a schematic point moves through a drift step and a noise step. It is not a numerical sampler.

@@ -364,13 +364,14 @@ img {
   text-align:right;
   max-width:230px;
 }
+/* Selected pattern A: complete copy beside a small, stable preview. */
 .project {
   display:grid;
   grid-template-columns:minmax(0,1fr) 228px;
-  gap:48px;
-  padding:30px 0;
+  gap:32px;
+  padding:24px 0;
   border-bottom:1px solid var(--line);
-  align-items:center;
+  align-items:start;
 }
 .project:first-of-type {
   padding-top:0;
@@ -397,8 +398,8 @@ img {
 }
 .project h3 {
   font-family:var(--heading);
-  font-size:22px;
-  line-height:1.5;
+  font-size:18px;
+  line-height:1.55;
   letter-spacing:-.015em;
   text-wrap:pretty;
 }
@@ -472,7 +473,8 @@ img {
   margin-top:9px;
 }
 .project-copy { min-width:0; }
-.project-description { font-size:14px; margin-top:16px; }
+.project-description { font-size:13px; line-height:1.85; margin-top:12px; }
+.project-description li+li { margin-top:8px; }
 .project h3 a { text-decoration:none; }
 .project h3 a:hover { text-decoration:underline; text-underline-offset:4px; }
 .paper-mark { color:var(--accent); font:15px var(--sans); white-space:nowrap; }
@@ -521,19 +523,21 @@ img {
 .preview-square.is-dark { fill:var(--diagram-quiet); }
 .preview-queen { fill:var(--ink); }
 
-/* One brief pass per hover. Touch users see the complete still; tapping a paper opens it. */
+/* A row hover animates only its thumbnail, never its copy or dimensions.
+   Pointer clicks must not pin playback through :focus-within.
+   Linked thumbnails also animate on keyboard focus; paper navigation stays native. */
 @media (any-hover:hover) {
-  .diagram:is(:hover,:focus-visible) .preview-chart:not(.preview-chart-trace) { animation:chart-underlay 1.6s ease-out both; }
-  .diagram:is(:hover,:focus-visible) .preview-chart-trace { animation:chart-trace 1.6s ease-out both; }
-  .diagram:is(:hover,:focus-visible) .sampling-dot { animation:sampling-update 1.8s ease-in-out both; }
-  .diagram:is(:hover,:focus-visible) .motion-arm-left { animation:pose-left 2s ease-in-out both; }
-  .diagram:is(:hover,:focus-visible) .motion-arm-right { animation:pose-right 2s ease-in-out both; }
-  .diagram:is(:hover,:focus-visible) .motion-b .motion-arm { animation-delay:.2s; }
-  .diagram:is(:hover,:focus-visible) .motion-alignment path { animation:alignment-trace 2.2s ease-out both; }
-  .diagram:is(:hover,:focus-visible) .preview-queen { animation:queen-place .5s ease-out both; }
-  .diagram:is(:hover,:focus-visible) .queen-1 { animation-delay:.3s; }
-  .diagram:is(:hover,:focus-visible) .queen-2 { animation-delay:.6s; }
-  .diagram:is(:hover,:focus-visible) .queen-3 { animation-delay:.9s; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .preview-chart:not(.preview-chart-trace) { animation:chart-underlay 1.6s ease-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .preview-chart-trace { animation:chart-trace 1.6s ease-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .sampling-dot { animation:sampling-update 1.8s ease-in-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .motion-arm-left { animation:pose-left 2s ease-in-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .motion-arm-right { animation:pose-right 2s ease-in-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .motion-b .motion-arm { animation-delay:.2s; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .motion-alignment path { animation:alignment-trace 2.2s ease-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .preview-queen { animation:queen-place .5s ease-out both; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .queen-1 { animation-delay:.3s; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .queen-2 { animation-delay:.6s; }
+  :is(.diagram:is(:hover,:focus-visible), .project:hover .diagram) .queen-3 { animation-delay:.9s; }
 }
 @keyframes chart-underlay { 0%,80% { opacity:.28; } 100% { opacity:1; } }
 @keyframes chart-trace { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0); } }
@@ -970,11 +974,11 @@ img {
     padding:28px 0;
   }
   .project h3 {
-    font-size:21px;
+    font-size:17px;
   }
   .project > .diagram {
-    width:192px;
-    justify-self:center;
+    width:152px;
+    justify-self:end;
   }
   .project-summary {
     font-size:14px;

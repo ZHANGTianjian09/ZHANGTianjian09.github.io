@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#244f70">
+  <title>项目交互备选 — Tianjian Zhang</title>
+  <link rel="stylesheet" href="assets/site.css?v=20261107-project-hover">
+  <link rel="stylesheet" href="assets/interaction-demos.css">
+  <script type="module" src="assets/interaction-demos.js"></script>
+</head>
+<body class="demo-page">
+  <a class="skip-link" href="#demo-stage">跳转到项目演示</a>
+  <header class="study-header">
+    <div class="study-wrap study-header-inner">
+      <a class="study-brand" href="zh.html">Tianjian Zhang<span aria-hidden="true">.</span></a>
+      <span class="study-label">交互备选 / INTERACTION STUDIES</span>
+      <a class="study-back" href="zh.html#projects">当前主页 ↗</a>
+    </div>
+  </header>
+  <main class="study-wrap" id="main">
+    <div class="study-intro">
+      <p class="study-kicker">PROJECTS · 01—03</p>
+      <h1>先用好图片旁的空间</h1>
+      <p>先看完整图文，再比较真正压缩行高的方案。项目原文保持一致，悬停即可看图例动效。</p>
+    </div>
+
+    <div class="study-options" role="tablist" aria-label="选择交互方案">
+      <button type="button" role="tab" id="option-a" aria-controls="demo-stage" aria-selected="true" tabindex="0" data-mode="a">
+        <span class="option-letter">A</span><span class="option-copy"><strong>直接全显</strong><span>原文全展示 · 只动小图</span></span>
+      </button>
+      <button type="button" role="tab" id="option-b" aria-controls="demo-stage" aria-selected="false" tabindex="-1" data-mode="b">
+        <span class="option-letter">B</span><span class="option-copy"><strong>图文同收</strong><span>图也缩小 · 整行变矮</span></span>
+      </button>
+      <button type="button" role="tab" id="option-c" aria-controls="demo-stage" aria-selected="false" tabindex="-1" data-mode="c">
+        <span class="option-letter">C</span><span class="option-copy"><strong>按需展开</strong><span>先填满图旁 · 超出再收</span></span>
+      </button>
+    </div>
+
+    <div class="study-explanation">
+      <div><p id="mode-title">A / 直接全显</p><p id="mode-description">全部 bullet 直接放在图片旁。悬停只播放小图，文字与行高不变化。</p></div>
+      <button class="study-reset" type="button" id="reset-demo">重置演示 <span aria-hidden="true">↺</span></button>
+    </div>
+
+    <section class="demo-stage" id="demo-stage" role="tabpanel" aria-labelledby="option-a" tabindex="0" data-mode="a">
+      <div class="stage-heading"><h2>项目经历</h2><span>真实内容预览</span></div>
+      <article class="demo-card" id="demo-erm" aria-labelledby="demo-title-erm">
+        <div class="demo-copy">
+          <h3 id="demo-title-erm"><a href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener">一般凸正则化下非高斯经验风险最小化（ERM）的渐近单样本代理模型<span class="paper-mark" aria-hidden="true"> ↗</span></a></h3>
+          <ul class="demo-bullets"><li>研究具有相关非高斯特征和凸正则化的高维ERM（例如带伪Huber损失的ℓ<sub>1</sub>正则化）</li></ul>
+          <button class="disclosure-toggle" type="button" aria-expanded="true" aria-controls="more-erm"><span class="disclosure-label">收起</span><svg class="disclosure-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4L6 8L10 4"/></svg></button>
+          <div class="demo-more" id="more-erm"><div><ul class="demo-bullets"><li>构造具有渐近均值和预测方差转移性质的单样本代理模型；推导渐近预测分布及分类误差表达式</li><li>结合腔体Hamilton–Jacobi插值、留一法分析和凸响应微积分，处理非光滑惩罚项</li><li>在代理模型中保留特征与标签的分布信息，解释预测与变量选择中高斯普适性的失效</li></ul></div></div>
+        </div>
+        <a class="diagram diagram-link" data-diagram="erm" href="https://github.com/ZHANGTianjian09/non-gaussian-erm/blob/main/paper.pdf" target="_blank" rel="noopener" aria-label="阅读论文：非高斯经验风险最小化"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/erm-marginal.png" alt="" loading="lazy"></a>
+      </article>
+      <article class="demo-card" id="demo-sampling" aria-labelledby="demo-title-sampling">
+        <div class="demo-copy">
+          <h3 id="demo-title-sampling">幂次调节近端采样算法</h3>
+          <ul class="demo-bullets"><li>开发幂次调节近端Langevin采样器，结合隐式漂移更新与状态相关的高斯噪声，稳定超线性动力学并改善对重尾分布的探索</li></ul>
+          <button class="disclosure-toggle" type="button" aria-expanded="true" aria-controls="more-sampling"><span class="disclosure-label">收起</span><svg class="disclosure-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4L6 8L10 4"/></svg></button>
+          <div class="demo-more" id="more-sampling"><div><ul class="demo-bullets"><li>在尾部增长条件下建立几何遍历性，涵盖非幂次调节近端采样不具备几何遍历性的多项式尾目标分布</li><li>将幂次调节Langevin动力学表述为加权Wasserstein几何中的梯度流，为收敛性和离散化误差分析提供变分框架</li></ul></div></div>
+        </div>
+        <figure class="diagram" data-diagram="sampling" role="img" aria-label="幂次调节近端采样示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/proximal-v2.svg" alt="" loading="lazy"></figure>
+      </article>
+      <article class="demo-card" id="demo-motion" aria-labelledby="demo-title-motion">
+        <div class="demo-copy">
+          <h3 id="demo-title-motion">基于深度学习的人体动作相似度评估框架</h3>
+          <ul class="demo-bullets"><li>设计从二维视频评估动作相似度的框架，适用于不同角度、光照等条件</li></ul>
+          <button class="disclosure-toggle" type="button" aria-expanded="true" aria-controls="more-motion"><span class="disclosure-label">收起</span><svg class="disclosure-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4L6 8L10 4"/></svg></button>
+          <div class="demo-more" id="more-motion"><div><ul class="demo-bullets"><li>使用AlphaPose提取二维关节坐标序列，微调MotionBERT重建三维关节轨迹；结合余弦距离与动态时间规整（DTW）对齐动作序列</li><li>跨视频关键动作识别与匹配准确率达到93%</li></ul></div></div>
+        </div>
+        <figure class="diagram" data-diagram="motion" role="img" aria-label="人体动作序列对齐示意"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/motion.svg" alt="" loading="lazy"></figure>
+      </article>
+      <article class="demo-card" id="demo-queens" aria-labelledby="demo-title-queens">
+        <div class="demo-copy">
+          <h3 id="demo-title-queens">基于位运算与并行计算的N皇后问题求解</h3>
+          <ul class="demo-bullets"><li>利用回溯与位运算，通过单条Oracle SQL查询求解N皇后问题</li></ul>
+          <button class="disclosure-toggle" type="button" aria-expanded="true" aria-controls="more-queens"><span class="disclosure-label">收起</span><svg class="disclosure-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4L6 8L10 4"/></svg></button>
+          <div class="demo-more" id="more-queens"><div><ul class="demo-bullets"><li>将皇后位置编码为位掩码，相比数值和字符串表示，存储需求降低超过80%，计算速度提升超过3倍</li><li>划分搜索空间进行并行计算并优化Oracle内存分配；在家用计算机上一周内求解18皇后问题，创下校内纪录</li></ul></div></div>
+        </div>
+        <figure class="diagram" data-diagram="queens" role="img" aria-label="四皇后问题的一个合法解"><div class="diagram-live" aria-hidden="true"></div><img class="diagram-fallback" src="images/nqueens.svg" alt="" loading="lazy"></figure>
+      </article>
+    </section>
+
+    <footer class="study-footer">
+      <p id="mode-footnote">论文标题和缩略图直接打开论文。全部项目原文均可直接阅读。</p>
+      <div><button type="button" id="motion-preference" aria-pressed="false">减少动态效果</button><a href="components.html#illustrations">查看共享组件 ↗</a></div>
+    </footer>
+    <noscript><p class="study-noscript">JavaScript 未开启，当前显示全部项目原文与静态图。</p></noscript>
+  </main>
+</body>
+</html>
